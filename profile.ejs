@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+   
+</head>
+<body>
+        <style>
+
+            .container.cover{
+                background-image: url("<%= lastChampBg %>");
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 20rem;
+            }
+
+            .avatar{
+              
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                margin: 150px;
+            }
+        </style>
+        
+           
+    
+        <div class="container">
+        <div class="input-group flex-nowrap" id="searchBarProfile"></div>
+        <form action="/profile/" method="get">
+                <!-- <span class="input-group-text" id="addon-wrapping">@</span> -->
+                <input type="text" class="form-control" id="searchFieldProfile" placeholder="Search for another EUNE user" aria-label="Username" aria-describedby="addon-wrapping" name="profile" autocomplete="off">
+                <input type="submit" value="Search" id="searchProfile">
+            </form>      
+            
+        </form>
+        
+        </div>
+        <div class="container cover">
+           
+                <div class="avatar">
+                    <div class="mt-5 d-flex justify-content-center">
+                        <div class="card p-3">
+                            <div class="d-flex align-items-center">
+                                <div class="image"></div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0"><%= name %> </h4>
+                                    <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="articles">Level</span> <span class="number1"><%= typeof summonerLevel != 'undefined' ? summonerLevel : 'error'  %></span> </div>
+                                        <div class="d-flex flex-column"> <span class="articles">Winrate in last 20 matches</span> <span class="number1"><%= typeof ratioVar != 'undefined' ? ratioVar : 'error' %>%</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container">
+                   
+
+                <table class="table table-borderless">
+                     <th>
+                         
+                                <div class="row text-center" style="width: 100px; margin-left: 25%;">
+                                    <div class="col-md-4 card-container">
+                                      <div class="card card-flip" style="height: 200px;width: 200px;">
+                                        <div class="front card-block">
+                                            <img src="/img/base-icons/<%= rankedSoloTier %>.png" width="200px" height="200px" alt="test">
+                                        </div>
+                                        <div class="back card-block" style=" margin-top: -100px;">
+                                            <h4 class="card-title">RANKED 5V5 SOLO</h4>
+                                          <h6 class="card-subtitle text-muted"><%= rankedSoloTier %> <%= rankedSoloRank  %></h6>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                             
+                        </th>
+
+                        <th>
+                            <div class="row text-center" style="width: 100px; margin-left: 25%;">
+                                <div class="col-md-4 card-container">
+                                  <div class="card card-flip" style="height: 200px;width: 200px;">
+                                    <div class="front card-block">
+                                        <img src="/img/base-icons/<%= rankedFlexTier %>.png" width="200px" height="200px" alt="test">
+                                    </div>
+                                    <div class="back card-block" style=" margin-top: -100px;">
+                                        <h4 class="card-title">RANKED FLEX </h4>
+                                      <h6 class="card-subtitle text-muted"><%= rankedFlexTier %> <%= rankedFlexRank  %></h6>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        
+                            
+                         
+                    
+                     </th>
+                </table>
+                <table class="table table-borderless">
+                     <tr>
+                        <th>
+                            <h4 class="lastHead">LAST 5 MATCHES</h4>
+                            <h6 class="leveltext">
+                                <% if(typeof winLose === 'undefined'){ %> <span> ERROR FETCHING DATA</span> <% } else { for(var i=0; i < winLose.length; i++) { %>
+                                    <span class="<%= winLose[i] %>"> <%= winLose[i] %></span>
+                                    <% } } %>
+                            </h6>
+                       </th>
+
+                        <th>
+                            <h4 class="lastHead">LAST CHAMPION PLAYED</h4>
+                            <h6 class="leveltext"><%= lastChampionPlayed %></h6>
+                        </th>                    
+                        <th>
+                            <h4 class="lastHead">LAST CHAMPION MASTERY</h4>
+                            <h6 class="leveltext"><%= LastChampMast %></h6>
+                        </th> 
+                        <th>
+                            <h4 class="lastHead">LAST CHAMPION POINTS</h4>
+                            <h6 class="leveltext"><%= ChampPoints %></h6>
+                        </th>
+                       
+                        <th>
+
+                            <h4 class="lastHead">CHEST GRANTED?</h4>
+                            <h6 class="leveltext"><% if(ChestGranted){%>  
+                                            Yes
+                                            <% } else { %>
+                                                No                               
+                                            
+                            <% }%> </h6>
+                        </th>
+                
+                    </tr>     
+                </table>
+
+
+
+
+
+
+            
+                </div>
+
+                <style>
+
+/* body {
+    background-color: #B3E5FC;
+    border-radius: 10px
+} */
+.image{
+    border-radius: 50%;
+    background-image: url("<%= avatarLink %>");
+    height: 120%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 44%;
+    background-position: right;
+
+    
+}
+.card {
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    background-color: none;
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.articles {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number1 {
+    font-weight: 500
+}
+
+.followers {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number2 {
+    font-weight: 500
+}
+
+.rating {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number3 {
+    font-weight: 500
+}
+                </style>
+            <script>
+                $(document).ready(function() {
+    var front = document.getElementsByClassName("front");
+    var back = document.getElementsByClassName("back");
+
+    var highest = 0;
+    var absoluteSide = "";
+
+    for (var i = 0; i < front.length; i++) {
+        if (front[i].offsetHeight > back[i].offsetHeight) {
+        if (front[i].offsetHeight > highest) {
+            highest = front[i].offsetHeight;
+            absoluteSide = ".front";
+        }
+        } else if (back[i].offsetHeight > highest) {
+        highest = back[i].offsetHeight;
+        absoluteSide = ".back";
+        }
+    }
+    $(".front").css("height", highest);
+    $(".back").css("height", highest);
+    $(absoluteSide).css("position", "absolute");
+    });
+            </script>
+   
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>

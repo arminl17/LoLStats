@@ -1,0 +1,268 @@
+body{
+    background: url(img/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+form{
+    margin: 0 auto;
+}
+/* #searchBar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #FFFF00;
+    padding: 10px;
+} */
+#searchBar{
+    position: absolute;
+    width: 896px;
+    height: 187px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 13px 19px 72px 25px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+    text-align: center;
+    border-radius: 40px;
+    border: none;
+}
+#searchBarProfile {
+    width: 100%;
+    backdrop-filter: blur(40px);
+    text-align: center;
+    border: none;
+}
+#searchField {
+    display: inline-block;
+    width: 500px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 4px;
+    height: 30px;
+    box-shadow: none;
+    border: 1px solid #CCC;
+    background-color: #FFF;
+    color: initial;
+    border: none;
+}
+#searchFieldProfile {
+    display: inline-block;
+    width: 90%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 4px;
+    height: 30px;
+    box-shadow: none;
+    border: 1px solid #CCC;
+    background-color: #FFF;
+    color: initial;
+    border: none;
+}
+input[type="submit" i] {
+    background-color: #2693b8;
+    width: 110px;
+    font-size: 16px;
+    color: #FFF;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 40px;
+    border: none;
+    transition-duration: 500ms;
+}
+#searchProfile {
+    background-color: #2693b8;
+    width: 110px;
+    font-size: 16px;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 40px;
+    border: none;
+    transition-duration: 500ms;
+    padding: 0px;
+}
+input[type="submit" i]:hover {
+    background-color: #207794;
+    transition: all ease-in-out;
+    transition-duration: 500ms;
+}
+
+input[type="text" i ] {
+    font-weight: bolder;
+    text-align: center;
+    border: none;
+}
+
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+    background: rgba(255, 255, 255, .45);
+    backdrop-filter: saturate(160%) blur(40px);
+    margin-top: 8rem;
+    /* float: left; */
+    height: 43.4rem;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.15), 0px 14px 44px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.heading {
+    position: relative;
+}
+.card { 
+    width: 18rem;
+    float: left;
+    border-bottom-left-radius: 15px;
+    margin-right: 70px;
+    margin-top: -15px;
+}
+.card-img {
+    margin-top: auto;
+    float: left;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    
+   
+
+}
+
+.img-top {
+    width: 10%;
+    top: 185px;
+    left: 200px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.card-right {
+    display: block;
+    margin-top: auto;
+    float: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.level {
+    /* display: flex; */
+    float: left;
+    
+}
+.levelheading { 
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    border-top: lightslategrey 2px solid;
+    border-bottom: lightslategrey 2px solid;
+    padding: 25px;
+}
+
+.lastPlayed {
+    float: left;
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border-top: lightslategrey 2px solid;
+    border-bottom: lightslategrey 2px solid;
+    padding: 25px;
+}
+
+span.W{
+    color: green;
+}
+span.L{
+    color: red;
+}
+
+.container{
+    background: rgba(255, 255, 255, .45);
+    backdrop-filter: saturate(160%) blur(20px); 
+
+
+}
+.userInfo {
+    height: 150px;
+    width: 150px;
+    background-color: greenyellow;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.containerItem {
+    padding:50px;
+}
+
+
+/* test ikonice */
+
+.card-block .btn-outline-primary {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+  
+  .card .card-flip {
+    margin: 20px 0;
+    background-color: none;
+    width: 200px;
+  }
+  
+  /* Flip Cards CSS */
+  .card-container {
+    perspective: 700px;
+  }
+  .card-flip {
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    height: auto;
+    transition: all 0.5s ease-out;
+    background: none;
+    border: none;
+  }
+  
+  .card-flip div {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+  
+  .card-flip .front {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card-flip .back {
+    position: relative;
+    z-index: 0;
+    transform: rotateY(-180deg);
+  }
+  
+  .card-container:hover .card-flip {
+    transform: rotateY(180deg);
+  }
+
+
+  .back .card-block {
+    margin-top: -100px;
+  }
