@@ -8,14 +8,6 @@ body{
 form{
     margin: 0 auto;
 }
-/* #searchBar {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 5px solid #FFFF00;
-    padding: 10px;
-} */
 #searchBar{
     position: absolute;
     width: 896px;
@@ -266,3 +258,33 @@ span.L{
   .back .card-block {
     margin-top: -100px;
   }
+
+.avatar{
+  
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin: 150px;
+}
+
+.card {
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    background-color: none;
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.articles {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number1 {
+    font-weight: 500
+}
+
