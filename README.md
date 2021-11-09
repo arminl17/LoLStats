@@ -12,7 +12,7 @@ Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
+### You need to get a RIOT API key - you can obtain one at -> [https://developer.riotgames.com/#](https://developer.riotgames.com/#)
 ## Webpage preview 
 ### User can search for a player on EUNE server and get his latest statistics
 ![image](https://user-images.githubusercontent.com/22567169/140968689-cecb6af7-0203-43c7-97c5-92bdb4db0f9d.png)
